@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jagadeesh S | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f0f0f;
+      --text-color: #0ff;
+      --highlight: #0ff;
+      --section-bg: rgba(255, 255, 255, 0.05);
+    }
+
+    [data-theme="light"] {
+      --bg-color: #f5f5f5;
+      --text-color: #111;
+      --highlight: #00f;
+      --section-bg: rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      transition: background 0.5s, color 0.5s;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #111;
+      border-bottom: 2px solid var(--highlight);
+      box-shadow: 0 0 15px var(--highlight);
+    }
+    header h1 {
+      font-size: 3rem;
+      color: var(--highlight);
+      animation: fadeInDown 1s ease-out;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+      animation: fadeInDown 1.5s ease-out;
+    }
+    nav {
+      margin-top: 1rem;
+      animation: fadeInDown 2s ease-out;
+    }
+    nav a {
+      color: var(--highlight);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: 2px solid var(--highlight);
+      color: var(--highlight);
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      transition: all 0.3s ease;
+    }
+    .theme-toggle:hover {
+      background: var(--highlight);
+      color: #000;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--section-bg);
+      border: 1px solid var(--highlight);
+      border-radius: 15px;
+      box-shadow: 0 0 10px var(--highlight);
+      animation: fadeInUp 1s ease-out;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--highlight);
+      padding-bottom: 0.5rem;
+    }
+    section p, section ul {
+      font-size: 1rem;
+      color: var(--text-color);
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: var(--highlight);
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #111;
+      color: #666;
+      font-size: 0.9rem;
+      border-top: 1px solid var(--highlight);
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+  <header>
+    <h1>Jagadeesh S</h1>
+    <p>Cloud & DevOps | Futuristic Tech Enthusiast</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a tech explorer specializing in cloud architecture, automation, and futuristic system engineering. Download my <a href="resume.pdf" download>resume</a>.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Backup Automation Script</strong> – Shell-based backup system with cron integration and report logging.</li>
+      <li><strong>AWS Infra Deployment</strong> – Terraform + CI/CD pipelines for deploying scalable architecture.</li>
+      <li><strong>Azure Migration</strong> – Seamless app migration with ARM templates and automation.</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>Cloud: AWS, Azure | Automation: Bash, Ansible | Tools: Git, Jenkins, Terraform, Docker</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: jagadeesh@example.com</p>
+    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jagadeesh S. Crafted for the future.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      if (currentTheme === "light") {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.removeItem("theme");
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+      }
+    }
+
+    window.onload = () => {
+      if (localStorage.getItem("theme") === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }
+  </script>
+</body>
+</html>
