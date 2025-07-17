@@ -9,14 +9,14 @@
     :root {
       --bg-color: #000000;
       --text-color: #d0eaff;
-      --highlight: #00b4ff;
-      --section-bg: #0d0d0d;
+      --highlight: #4fc3f7;
+      --section-bg: #0a0a0a;
     }
 
     [data-theme="light"] {
-      --bg-color: #d0eaff;
+      --bg-color: #e3f2fd;
       --text-color: #000;
-      --highlight: #007acc;
+      --highlight: #0288d1;
       --section-bg: #ffffff;
     }
 
@@ -33,34 +33,34 @@
       transition: background 0.5s, color 0.5s;
     }
     header {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: var(--section-bg);
+      padding: 3rem 1rem;
+      background: linear-gradient(to right, #000 0%, #1c1c1c 100%);
       border-bottom: 2px solid var(--highlight);
+      text-align: center;
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: var(--highlight);
-      animation: fadeInDown 1s ease-out;
+      margin-bottom: 0.5rem;
     }
     header p {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       color: var(--text-color);
-      animation: fadeInDown 1.5s ease-out;
     }
     nav {
-      margin-top: 1rem;
-      animation: fadeInDown 2s ease-out;
+      margin-top: 1.5rem;
     }
     nav a {
       color: var(--highlight);
-      margin: 0 15px;
+      margin: 0 20px;
       text-decoration: none;
       font-weight: 600;
+      font-size: 1rem;
+      padding: 0.5rem;
       transition: color 0.3s ease;
     }
     nav a:hover {
-      color: #fff;
+      color: #ffffff;
     }
     .theme-toggle {
       position: absolute;
@@ -75,27 +75,41 @@
       height: 32px;
     }
     section {
-      max-width: 900px;
-      margin: 2rem auto;
+      max-width: 1200px;
+      margin: 3rem auto;
       padding: 2rem;
       background: var(--section-bg);
       border: 1px solid var(--highlight);
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0, 180, 255, 0.1);
-      animation: fadeInUp 1s ease-out;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(79, 195, 247, 0.15);
     }
     section h2 {
-      font-size: 1.75rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
+      color: var(--highlight);
       border-bottom: 1px solid var(--highlight);
       padding-bottom: 0.5rem;
     }
     section p, section ul {
-      font-size: 1rem;
+      font-size: 1.05rem;
       color: var(--text-color);
     }
     ul li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .tools img {
+      height: 40px;
+      transition: transform 0.3s;
+    }
+    .tools img:hover {
+      transform: scale(1.2);
     }
     a {
       color: var(--highlight);
@@ -105,26 +119,30 @@
     }
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
       background: var(--section-bg);
       color: var(--text-color);
       font-size: 0.9rem;
       border-top: 1px solid var(--highlight);
     }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      nav a {
+        display: inline-block;
+        margin: 10px 10px;
+      }
+      section {
+        margin: 2rem 1rem;
+        padding: 1rem;
+      }
     }
   </style>
 </head>
 <body>
   <button class="theme-toggle" onclick="toggleTheme()">
-    <img id="theme-icon" src="https://img.icons8.com/ios-glyphs/30/00b4ff/moon-symbol.png" alt="Theme Icon"/>
+    <img id="theme-icon" src="https://img.icons8.com/ios-glyphs/30/4fc3f7/moon-symbol.png" alt="Theme Icon"/>
   </button>
 
   <header>
@@ -140,21 +158,29 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I’m a passionate Cloud Engineer with a strong foundation in Linux systems, automation, and infrastructure as code. I specialize in building reliable, scalable environments in AWS and Azure. Download my <a href="resume.pdf" download>resume</a>.</p>
+    <p>I’m a passionate Cloud Engineer with deep expertise in Linux systems, DevOps automation, and infrastructure as code. I design and deploy secure, scalable cloud environments using AWS and Azure. <a href="resume.pdf" download>Download my resume</a>.</p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
     <ul>
-      <li><strong>Backup Automation Script</strong> – Shell-based backup system with cron integration and report logging.</li>
-      <li><strong>AWS Infra Deployment</strong> – Terraform + CI/CD pipelines for deploying scalable architecture.</li>
-      <li><strong>Azure Migration</strong> – Seamless app migration with ARM templates and automation.</li>
+      <li><strong>Backup Automation Script</strong> – Built a Shell-based backup system with cron integration, compression, and log reporting.</li>
+      <li><strong>Cloud Infra Deployment</strong> – Used Terraform and CI/CD pipelines to provision AWS infrastructure with monitoring and logging.</li>
+      <li><strong>Azure App Migration</strong> – Migrated enterprise applications to Azure with ARM templates and end-to-end automation.</li>
     </ul>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
-    <p>Cloud: AWS, Azure | OS: Linux | Automation: Bash, Ansible | Tools: Git, Jenkins, Terraform, Docker</p>
+    <p>Cloud Platforms: AWS, Azure | Operating Systems: Linux (Ubuntu, RHEL) | Automation: Bash, Ansible | DevOps Tools: Git, Jenkins, Docker, Terraform</p>
+    <div class="tools">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" alt="Ansible">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+    </div>
   </section>
 
   <section id="contact">
@@ -165,7 +191,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 JAGADEESHWAR S. Crafted with professionalism and passion for the cloud.</p>
+    <p>&copy; 2025 JAGADEESHWAR S. Built with a love for Linux and the Cloud.</p>
   </footer>
 
   <script>
@@ -175,11 +201,11 @@
       if (currentTheme === "light") {
         document.documentElement.removeAttribute("data-theme");
         localStorage.removeItem("theme");
-        themeIcon.src = "https://img.icons8.com/ios-glyphs/30/00b4ff/moon-symbol.png";
+        themeIcon.src = "https://img.icons8.com/ios-glyphs/30/4fc3f7/moon-symbol.png";
       } else {
         document.documentElement.setAttribute("data-theme", "light");
         localStorage.setItem("theme", "light");
-        themeIcon.src = "https://img.icons8.com/ios-glyphs/30/007acc/sun--v1.png";
+        themeIcon.src = "https://img.icons8.com/ios-glyphs/30/0288d1/sun--v1.png";
       }
     }
 
@@ -187,7 +213,7 @@
       const themeIcon = document.getElementById("theme-icon");
       if (localStorage.getItem("theme") === "light") {
         document.documentElement.setAttribute("data-theme", "light");
-        themeIcon.src = "https://img.icons8.com/ios-glyphs/30/007acc/sun--v1.png";
+        themeIcon.src = "https://img.icons8.com/ios-glyphs/30/0288d1/sun--v1.png";
       }
     }
   </script>
