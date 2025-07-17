@@ -8,95 +8,131 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script defer src="https://unpkg.com/scrollreveal"></script>
   <style>
-    /* ... existing styles remain unchanged ... */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #000;
+      color: #e0f7fa;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      background: linear-gradient(to right, #2196f3, #21cbf3);
+      color: black;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      background: #111;
+    }
+
+    nav a {
+      color: #90caf9;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
     .tools img {
       height: 40px;
       transition: transform 0.3s, filter 0.3s;
       filter: drop-shadow(0 0 3px rgba(79, 195, 247, 0.7));
     }
+
     .tools img:hover {
       transform: scale(1.2) rotate(5deg);
       filter: drop-shadow(0 0 6px rgba(79, 195, 247, 1));
     }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
-  <button class="theme-toggle" onclick="toggleTheme()">
-    <img id="theme-icon" src="https://img.icons8.com/ios-glyphs/30/4fc3f7/moon-symbol.png" alt="Theme Icon"/>
-  </button>
-
   <header>
     <h1>JAGADEESHWAR S</h1>
     <p>Cloud Engineer | Linux Enthusiast</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I’m a passionate Cloud Engineer with deep expertise in Linux systems, DevOps automation, and infrastructure as code. I design and deploy secure, scalable cloud environments using AWS and Azure. <a href="resume.pdf" download>Download my resume</a>.</p>
+    <p>I am a cloud engineer with a strong background in Linux systems, automation, and scalable infrastructure solutions.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Tools</h2>
+    <div class="tools">
+      <img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" alt="AWS" title="Amazon Web Services" style="height: 40px; object-fit: contain; background-color: white; border-radius: 4px; padding: 2px;" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" title="Linux" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" title="Terraform" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" alt="Ansible" title="Ansible" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins" title="Jenkins" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" title="Bash Scripting" />
+    </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <ul>
-      <li><strong>Backup Automation Script</strong> – Built a Shell-based backup system with cron integration, compression, and log reporting.</li>
-      <li><strong>Cloud Infra Deployment</strong> – Used Terraform and CI/CD pipelines to provision AWS infrastructure with monitoring and logging.</li>
-      <li><strong>Azure App Migration</strong> – Migrated enterprise applications to Azure with ARM templates and end-to-end automation.</li>
-    </ul>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <p>Cloud Platforms: AWS, Azure | Operating Systems: Linux (Ubuntu, RHEL) | Automation: Bash, Ansible | DevOps Tools: Git, Jenkins, Docker, Terraform</p>
-    <div class="tools">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" alt="Ansible">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-    </div>
+    <p>Details about key cloud infrastructure and automation projects you’ve worked on go here.</p>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
+    <h2>Contact Me</h2>
     <p>Email: <a href="mailto:jagadeesh80155@gmail.com">jagadeesh80155@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/jagadeeshwars" target="_blank">github.com/jagadeeshwars</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/jagadeeshwar-s" target="_blank">linkedin.com/in/jagadeeshwar-s</a></p>
+    <p>GitHub: <a href="https://github.com/jagadeeshwars" target="_blank">jagadeeshwars</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/jagadeeshwar-s" target="_blank">jagadeeshwar-s</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 JAGADEESHWAR S. Built with a love for Linux and the Cloud.</p>
+    &copy; 2025 JAGADEESHWAR S. All rights reserved.
   </footer>
 
-  <script>
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute("data-theme");
-      const themeIcon = document.getElementById("theme-icon");
-      if (currentTheme === "light") {
-        document.documentElement.removeAttribute("data-theme");
-        localStorage.removeItem("theme");
-        themeIcon.src = "https://img.icons8.com/ios-glyphs/30/4fc3f7/moon-symbol.png";
-      } else {
-        document.documentElement.setAttribute("data-theme", "light");
-        localStorage.setItem("theme", "light");
-        themeIcon.src = "https://img.icons8.com/ios-glyphs/30/0288d1/sun--v1.png";
-      }
-    }
-
-    window.onload = () => {
-      const themeIcon = document.getElementById("theme-icon");
-      if (localStorage.getItem("theme") === "light") {
-        document.documentElement.setAttribute("data-theme", "light");
-        themeIcon.src = "https://img.icons8.com/ios-glyphs/30/0288d1/sun--v1.png";
-      }
-    }
-  </script>
   <script>
     ScrollReveal().reveal('section', {
       distance: '50px',
