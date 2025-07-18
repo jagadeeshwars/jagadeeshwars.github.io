@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JAGADEESHWAR S | Portfolio</title>
+  <link rel="icon" href="https://img.icons8.com/fluency/48/cloud.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script defer src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    :root {
+      --bg: #e0f7fa;
+      --text: #000;
+    }
+    body.light-mode {
+      --bg: #e0f7fa;
+      --text: #000;
+    }
+    body.dark-mode {
+      --bg: #000;
+      --text: #e0f7fa;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+    header, nav, section, footer {
+      padding: 1rem;
+      text-align: center;
+    }
+    header {
+      background: linear-gradient(270deg, #0077be, #00cfff);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .tools img {
+      height: 40px;
+      transition: transform 0.3s, filter 0.3s;
+      filter: drop-shadow(0 0 3px rgba(79, 195, 247, 0.7));
+    }
+    .tools img:hover {
+      transform: scale(1.2) rotate(5deg);
+      filter: drop-shadow(0 0 6px rgba(79, 195, 247, 1));
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .theme-toggle img {
+      width: 30px;
+    }
+    .contact-icons img {
+      vertical-align: middle;
+      margin-right: 8px;
+      width: 20px;
+    }
+    .resume-button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #0077be;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .resume-button:hover {
+      background-color: #005f99;
+    }
+  </style>
+</head>
+<body class="light-mode">
+  <button class="theme-toggle" onclick="toggleTheme()">
+    <img id="theme-icon" src="https://img.icons8.com/ios-filled/50/000000/sun--v1.png" alt="Toggle Theme" />
+  </button>
+
+  <header>
+    <h1>JAGADEESHWAR S</h1>
+    <p>Cloud Engineer | Linux Enthusiast</p>
+    <a class="resume-button" href="resume.pdf" target="_blank">View Resume</a>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a cloud engineer with a strong background in Linux systems, automation, and scalable infrastructure solutions.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Tools</h2>
+    <div class="tools">
+      <img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" alt="AWS" title="Amazon Web Services" style="height: 40px; object-fit: contain; background-color: white; border-radius: 4px; padding: 2px;" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" title="Linux" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" title="Terraform" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" alt="Ansible" title="Ansible" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins" title="Jenkins" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" title="Bash Scripting" />
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Details about key cloud infrastructure and automation projects you’ve worked on go here.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p class="contact-icons">
+      <img src="https://img.icons8.com/color/48/000000/gmail--v1.png" alt="Email" />
+      <strong>Gmail:</strong> <a href="mailto:jagadeesh80155@gmail.com">jagadeesh80155@gmail.com</a>
+    </p>
+    <p class="contact-icons">
+      <img src="https://img.icons8.com/color/48/000000/github--v1.png" alt="GitHub" />
+      <strong>GitHub:</strong> <a href="https://github.com/jagadeeshwars" target="_blank">github.com/jagadeeshwars</a>
+    </p>
+    <p class="contact-icons">
+      <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn" />
+      <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/jagadeeshwar-s" target="_blank">linkedin.com/in/jagadeeshwar-s</a>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 JAGADEESHWAR S. All rights reserved.
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('section', {
+      distance: '50px',
+      duration: 1000,
+      easing: 'ease-out',
+      origin: 'bottom',
+      interval: 200
+    });
+
+    function toggleTheme() {
+      const body = document.body;
+      const icon = document.getElementById('theme-icon');
+      const isLight = body.classList.contains('light-mode');
+
+      body.classList.toggle('light-mode', !isLight);
+      body.classList.toggle('dark-mode', isLight);
+
+      icon.src = isLight
+        ? 'https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png'
+        : 'https://img.icons8.com/ios-filled/50/000000/sun--v1.png';
+    }
+  </script>
+</body>
+</html>
